@@ -4,6 +4,7 @@
     background-color: var(--background);
     color: var(--boardBackgroundColor);
     font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body{
     display: flex;
@@ -62,6 +63,8 @@ body{
 #container > div{
     border: solid 2px var(--background);
     color: var(--background);
+    font-size: 4rem;
+    text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
