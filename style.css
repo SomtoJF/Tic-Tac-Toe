@@ -4,10 +4,19 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 0px;
+    margin: 0px;
 }
 
 #gameboard{
-    width: max(60vh,250px);
+    width: 30vw;
     height: 60vh;
     background-color: black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+#gameboard > div{
+    border: solid 2px white;
 }
