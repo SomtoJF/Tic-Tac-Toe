@@ -14,6 +14,7 @@ body{
     height: 100vh;
     padding: 0px;
     margin: 0px;
+    gap: 5vh;
 }
 
 #instructions{
@@ -65,6 +66,14 @@ body{
     color: var(--background);
     font-size: 4rem;
     text-align: center;
+}
+#restart{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    color: var(--background);
+    background-color: var(--boardBackgroundColor);
+    font-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {
