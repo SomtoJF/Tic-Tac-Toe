@@ -46,10 +46,11 @@ body{
     border-radius: 5px;
     background-color: var(--boardBackgroundColor);
     color: var(--background);
+    font-weight: bold;
 
 }
 
-#gameboard{
+#container{
     width: 30vw;
     height: 60vh;
     background-color: var(--boardBackgroundColor);
@@ -58,7 +59,7 @@ body{
     grid-template-rows: repeat(3,1fr);
 }
 
-#gameboard > div{
+#container > div{
     border: solid 2px var(--background);
     color: var(--background);
 }
