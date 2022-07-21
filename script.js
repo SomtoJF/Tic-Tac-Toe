@@ -33,7 +33,7 @@ let play = (function(){
             for(let i = 0; i < gameboard.length; i++){
                 if(gameboard[i].textContent != ""){
                     if(gameboard[i].textContent == gameboard[i+1].textContent && gameboard[i].textContent == gameboard[i+2].textContent){
-                        if(i != 2 && i != 5){
+                        if(i == 0 || i == 3 || i == 6){
                             if(gameboard[i].textContent == player1.marker){
                                 instructions.style.display = 'flex';
                                 instructionsText.textContent = 'X wins';
