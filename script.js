@@ -44,8 +44,7 @@ let play = (function(){
                             };
                         };
                     }
-                    else if(gameboard[i].textContent == gameboard[3].textContent && gameboard[i].textContent == gameboard[6].textContent){
-                        if(i < 3){
+                    else if(i < 3 && gameboard[i].textContent == gameboard[i+3].textContent && gameboard[i].textContent == gameboard[i+6].textContent){
                             if(gameboard[i].textContent == player1.marker){
                                 instructions.style.display = 'flex';
                                 instructionsText.textContent = 'X wins';
@@ -54,7 +53,6 @@ let play = (function(){
                                 instructions.style.display = 'flex';
                                 instructionsText.textContent = 'O wins';
                             };
-                        };
                     }
                     else if(gameboard[i].textContent == gameboard[4].textContent && gameboard[i].textContent == gameboard[8].textContent){
                         if(i == 0){
@@ -68,8 +66,7 @@ let play = (function(){
                             };
                         };
                     }
-                    else if(gameboard[i].textContent == gameboard[i+2].textContent && gameboard[i].textContent == gameboard[i+4].textContent){
-                        if(i == 2){
+                    else if(i == 2 && gameboard[i].textContent == gameboard[i+2].textContent && gameboard[i].textContent == gameboard[i+4].textContent){
                             if(gameboard[i].textContent == player1.marker){
                                 instructions.style.display = 'flex';
                                 instructionsText.textContent = 'X wins';
@@ -78,7 +75,6 @@ let play = (function(){
                                 instructions.style.display = 'flex';
                                 instructionsText.textContent = 'O wins';
                             };
-                        };
                     }
                 }
                 else{
