@@ -82,3 +82,16 @@ body{
         --boardBackgroundColor: white;
     }
 }
+
+@media all and (max-width: 500px) {
+    #container{
+        width: 90vw;
+        height: 90vw;
+    }
+}
+@media all and (max-width: 1000px) {
+    #container{
+        width: 60vw;
+        height: 60vw;
+    }
+}
