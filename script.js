@@ -30,7 +30,7 @@ let play = (function(){
     let checkWinner = ()=>{
         const combinations = function (){
 
-            for(let i = 0; i < gameboard.length; i++){
+            for(let i = 0; i < 7; i++){
                 if(gameboard[i].textContent != ""){
                     if(gameboard[i].textContent == gameboard[i+1].textContent && gameboard[i].textContent == gameboard[i+2].textContent){
                         if(i == 0 || i == 3 || i == 6){
@@ -44,7 +44,7 @@ let play = (function(){
                             };
                         };
                     }
-                    else if(gameboard[i].textContent == gameboard[i+3].textContent && gameboard[i].textContent == gameboard[i+6].textContent){
+                    else if(gameboard[i].textContent == gameboard[3].textContent && gameboard[i].textContent == gameboard[6].textContent){
                         if(i < 3){
                             if(gameboard[i].textContent == player1.marker){
                                 instructions.style.display = 'flex';
@@ -56,7 +56,7 @@ let play = (function(){
                             };
                         };
                     }
-                    else if(gameboard[i].textContent == gameboard[i+4].textContent && gameboard[i].textContent == gameboard[i+8].textContent){
+                    else if(gameboard[i].textContent == gameboard[4].textContent && gameboard[i].textContent == gameboard[8].textContent){
                         if(i == 0){
                             if(gameboard[i].textContent == player1.marker){
                                 instructions.style.display = 'flex';
@@ -87,6 +87,7 @@ let play = (function(){
             }
         };
         combinations();
+        roundCount++;
     };
 
     for(let i = 0; i < gameboard.length; i++){
@@ -95,14 +96,14 @@ let play = (function(){
                 if(gameboard[i].textContent == ''){
                     gameboard[i].textContent = player2.marker;
                     checkWinner();
-                    roundCount++;
+                    
                 };
             }
             else{
                 if(gameboard[i].textContent == ''){
                     gameboard[i].textContent = player1.marker;
                     checkWinner();
-                    roundCount++;
+                    
                 };
             };
             
