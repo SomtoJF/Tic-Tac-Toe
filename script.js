@@ -1,5 +1,6 @@
 let okbutton = document.getElementById('okbutton');
 let instructions = document.getElementById('instructions');
+let instructionsText = document.getElementById('text');
 let gameboard = document.getElementsByClassName('cell');
 let restartButton = document.getElementById('restart');
 
@@ -11,39 +12,72 @@ let player2 = player('Player 2', 'O');
 
 let play = (function(){
     let roundCount = 1;
-    
-    okbutton.addEventListener('click', ()=>instructions.style.display = 'none');
 
-    restartButton.addEventListener('click', ()=>{
+    function restart(){
         roundCount = 1;
         for(let i = 0; i < gameboard.length; i++){
             gameboard[i].textContent = '';
         };
-    })
+    }
+
+    okbutton.addEventListener('click', ()=>{
+        restart();
+        instructions.style.display = 'none'
+    });
+
+    restartButton.addEventListener('click', restart)
 
     let checkWinner = ()=>{
         const combinations = function (){
-            
+
             for(let i = 0; i < gameboard.length; i++){
                 if(gameboard[i].textContent != ""){
                     if(gameboard[i].textContent == gameboard[i+1].textContent && gameboard[i].textContent == gameboard[i+2].textContent){
                         if(i != 2 && i != 5){
-                            alert('game end');
+                            if(gameboard[i].textContent == player1.marker){
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'X wins';
+                            }
+                            else{
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'O wins';
+                            };
                         };
                     }
                     else if(gameboard[i].textContent == gameboard[i+3].textContent && gameboard[i].textContent == gameboard[i+6].textContent){
                         if(i < 3){
-                            alert('game end');
+                            if(gameboard[i].textContent == player1.marker){
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'X wins';
+                            }
+                            else{
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'O wins';
+                            };
                         };
                     }
                     else if(gameboard[i].textContent == gameboard[i+4].textContent && gameboard[i].textContent == gameboard[i+8].textContent){
                         if(i == 0){
-                            alert('game end');
+                            if(gameboard[i].textContent == player1.marker){
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'X wins';
+                            }
+                            else{
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'O wins';
+                            };
                         };
                     }
                     else if(gameboard[i].textContent == gameboard[i+2].textContent && gameboard[i].textContent == gameboard[i+4].textContent){
                         if(i == 2){
-                            alert('game end');
+                            if(gameboard[i].textContent == player1.marker){
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'X wins';
+                            }
+                            else{
+                                instructions.style.display = 'flex';
+                                instructionsText.textContent = 'O wins';
+                            };
                         };
                     }
                 }
